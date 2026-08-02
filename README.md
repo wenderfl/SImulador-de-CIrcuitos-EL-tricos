@@ -1,7 +1,11 @@
 <h1 align="center">
 Electric Circuit Simulator
 </h1>
-  
+
+<p align="center">
+  <img alt="Provisório" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/970800/header.jpg?t=1584006769" width="600">
+</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
   <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" />
