@@ -1,4 +1,4 @@
-# ⚡ Electric Circuit Simulator (C)
+# Electric Circuit Simulator
 
 <p align="center">
   <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 Sobre o Projeto
+## Sobre o Projeto
 
 O **Simulador de Circuitos Elétricos** é uma aplicação voltada para a modelagem, análise e solução de redes elétricas puramente resistivas e fontes de tensão/corrente contínua.
 
