@@ -1,11 +1,11 @@
-<div align="center">
-# Electric Circuit Simulator
-</div>
-
+<h1 align="center">
+Electric Circuit Simulator
+</h1>
+  
 <p align="center">
   <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
   <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" />
-  <img src="https://img.shields.io/badge/Graph_Theory-FF6F00?style=for-the-badge&logo=diagramsdotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/Graph_Theory-440080?style=for-the-badge&logo=diagramsdotnet&logoColor=white" />
   <img src="https://img.shields.io/badge/Status-In_Development-yellow?style=for-the-badge" />
 </p>
 
