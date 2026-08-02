@@ -2,9 +2,14 @@
 #include <stdlib.h>
 
 void imprimi(char **vetor, int n_l, int n_c){
-    //for(int i=0; i<n; i++){
-      //  printf("%c", vetor[i]);
-    //}
+    printf("debug: entrou >imprimi<");
+    
+    for(int l=0; l<n_l; l++){
+        for(int c=0; c<n_c; c++){
+            printf("%c ", vetor[l][c]);
+        }
+        printf("\n");
+    }
 }
 
 int main(){
