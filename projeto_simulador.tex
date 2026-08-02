@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\RequirePackage[brazilian]{babel}
+\RequirePackage{amsmath}
+\RequirePackage{hyperref}
+\RequirePackage[top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\title{\textbf{Simulador de Circuitos Elétricos em C}}
+\author{} % Evita o aviso de autor ausente
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Resumo \& Visão Geral}
+Este projeto une Estrutura de Dados (Grafos) com Teoria de Circuitos Elétricos (Análise Nodal) para simular o comportamento de circuitos de corrente contínua (CC) em linguagem C.
+
+\section{1. Mapeamento: Visão Elétrica \texorpdfstring{$\rightarrow$}{->} Netlist \texorpdfstring{$\rightarrow$}{->} Grafo}
+
+A conversão do circuito físico para a memória do programa segue este fluxo visual:
+
+\subsection*{A. Circuito Elétrico (Desenho)}
+\begin{verbatim}
+       (Nó 1) ------------ (Nó 2)
+         |                   |
+       [10V]               [100 Ohm]
+        (V1)                (R1)
+         |                   |
+       (Nó 0) ------------ (Nó 0)  <-- Ref (GND)
+\end{verbatim}
+
+\subsection*{B. Arquivo Netlist (\texttt{circuito.txt})}
+\begin{verbatim}
+V1 1 0 10.0
+R1 1 2 100.0
+R2 2 0 50.0
+\end{verbatim}
+
+\subsection*{C. Estrutura de Grafo em Memória (C)}
+\begin{verbatim}
+  [ Nó 0 (GND) ] <==== V1 (10V) ====> [ Nó 1 ]
+        ||                               ||
+     R2 (50 Ohm)                     R1 (100 Ohm)
+        ||                               ||
+        +================================+
+\end{verbatim}
+
+---
+
+\section{2. Arquitetura das Estruturas de Dados}
+
+\begin{itemize}
+    \item \textbf{Vértice (Nó):} Guarda a tensão calculada ($V_{\text{nó}}$) e a lista de componentes conectados.
+    \item \textbf{Aresta (Componente):} Guarda o tipo (\texttt{R}, \texttt{V}, \texttt{I}), o valor e os nós \texttt{A} e \texttt{B}.
+\end{itemize}
+
+---
+
+\section{3. Motor de Simulação (\texorpdfstring{$A \cdot X = B$}{A . X = B})}
+
+Transformação das leis de Kirchhoff na matriz nodal resolvida por Eliminação Gaussiana:
+
+\begin{verbatim}
+  Matriz Condutâncias (A)     Vet. Tensões (X)    Vet. Fontes (B)
+   [  G11   -G12   ...  ]  *   [   V_1   ]     =    [   I_1   ]
+   [ -G21    G22   ...  ]      [   V_2   ]          [   I_2   ]
+\end{verbatim}
+
+---
+
+\section{4. Roteiro Prático de Desenvolvimento}
+
+\begin{enumerate}
+    \item \textbf{Leitura do Arquivo:} Ler linha a linha do \texttt{.txt} e instanciar os componentes.
+    \item \textbf{Montagem do Grafo:} Conectar as pontas dos componentes aos nós correspondentes.
+    \item \textbf{Estampagem:} Preencher a matriz $A$ com as condutâncias ($G = 1/R$).
+    \item \textbf{Cálculo:} Resolver o sistema de equações e exibir o relatório final no terminal.
+\end{enumerate}
+
+\end{document}
