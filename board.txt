@@ -1,0 +1,6 @@
+<---------------------------------------------------->
+❌: char **vetor = malloc(n_l*sizeof(char));
+✅: char **vetor = malloc(n_l*sizeof(char*));
+💬: Você também pode usar o próprio ponteiro como referência para o sizeof:
+💬: char **vetor = malloc(n_l * sizeof(*vetor));
+<---------------------------------------------------->

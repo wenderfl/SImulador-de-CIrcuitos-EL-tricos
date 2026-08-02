@@ -17,7 +17,7 @@ int main(){
     int n_c=0;
     scanf("%d", &n_l);
     scanf("%d", &n_c);
-    char **vetor = malloc(n_l*sizeof(char));
+    char **vetor = malloc(n_l*sizeof(char*));
 
     //Alocando memória para as linhas do vetor
     for(int i=0; i<n_l; i++){
